@@ -80,9 +80,9 @@ h1 {
   border: 4px solid var(--accent);
   box-shadow: 0 2px 6px rgba(74,144,226,0.18);
   margin-right: 16px;
-  flex-shrink: 0; /* 丸のサイズを固定 */
+  flex-shrink: 0;
   position: relative;
-  left: -12px; /* 縦線に合わせて調整 */
+  left: 20px; /* ← 縦線の上に少し左寄せ */
 }
 
 .time-text {
@@ -104,7 +104,7 @@ h1 {
   .day-block{max-width:100%; padding:14px;}
   .timeline{padding-left:36px;}
   .timeline::before{left:22px;}
-  .circle{left:0;margin-right:12px;}
+  .circle{left:16px;} /* ← モバイルも左寄せ */
 }
 </style>
 </head>
