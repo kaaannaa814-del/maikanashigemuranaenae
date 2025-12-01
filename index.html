@@ -15,59 +15,60 @@
       font-family: 'Arial', sans-serif;
       text-align: center;
       min-height: 100vh;
-      color: white; /* ← 他の文字は白 */
+      color: white;
     }
 
-    /* ★ タイトル：黒字で絶対反映 ＋ 大きく */
+    /* タイトル（黒字） */
     .title {
-      font-size: 110px !important;   /* 超大きく */
+      font-size: 110px !important;
       font-weight: 900;
       margin-top: 120px;
-      color: black !important;       /* 強制黒字 */
+      color: black !important;
       text-shadow:
         0 0 20px rgba(255,255,255,0.95),
-        0 0 35px rgba(255,255,255,0.9); /* 白い光で読みやすい */
+        0 0 35px rgba(255,255,255,0.9);
       letter-spacing: 4px;
       line-height: 1.05;
     }
 
+    /* ボタンを下へ配置 */
     .menu-box {
-      margin-top: 160px;
+      margin-top: 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 32px;
     }
 
-    /* ★ ボタン大きめ & 見やすく */
+    /* ★ ボタン背景を水色ベタ塗りに変更 */
     .menu-btn {
       display: block;
       width: 360px;
       padding: 26px 0;
       font-size: 32px;
-      color: white;
+      color: black; /* ← ここ黒文字にしたよ（白のままでもOK） */
       text-decoration: none;
-      background: rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.8);
+      background: rgb(120, 210, 255);  /* ← はっきり水色塗りつぶし */
+      border: 2px solid rgba(255,255,255,0.9);
       border-radius: 22px;
-      backdrop-filter: blur(3px);
       transition: 0.25s;
     }
 
+    /* ホバー時：濃い水色に */
     .menu-btn:hover {
-      background: rgba(0,0,0,0.75);
+      background: rgb(80, 180, 255);
       transform: scale(1.08);
     }
 
-    /* ▼▼ スマホ最適化 ▼▼ */
+    /* ▼ スマホ最適化 ▼ */
     @media (max-width: 600px) {
-      body {
-        background-attachment: scroll;
+      .title {
+        font-size: 80px !important;
+        margin-top: 90px;
       }
 
-      .title {
-        font-size: 80px !important;  /* スマホに最適 */
-        margin-top: 90px;
+      .menu-box {
+        margin-top: 230px;
       }
 
       .menu-btn {
@@ -75,25 +76,12 @@
         padding: 20px 0;
         font-size: 29px;
       }
-
-      .menu-box {
-        margin-top: 130px;
-      }
     }
   </style>
-
 </head>
 
 <body>
+
   <div class="title">
     Snowboard Camp<br>2025
-  </div>
-
-  <div class="menu-box">
-    <a href="point.html" class="menu-btn">POINT</a>
-    <a href="schedule.html" class="menu-btn">SCHEDULE</a>
-    <a href="items.html" class="menu-btn">ITEMS</a>
-  </div>
-
-</body>
-</html>
+  <
