@@ -4,48 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schedule</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px;
       font-family: 'Playfair Display', serif;
       background: #f7f7f7;
       color: #2b2b2b;
-      padding: 20px;
     }
 
     h1 {
-      font-size: 38px;
+      font-size: 40px;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       letter-spacing: 1px;
     }
 
-    .schedule-box {
+    .day-block {
       max-width: 750px;
-      margin: 0 auto;
+      margin: 0 auto 50px auto;
+      padding: 20px 10px;
       background: white;
-      padding: 25px;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      line-height: 1.8;
-      font-size: 18px;
     }
 
     .day-title {
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 700;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      border-left: 5px solid #000;
-      padding-left: 10px;
+      text-align: left;
+      margin: 10px 0 25px 10px;
+      border-left: 6px solid black;
+      padding-left: 12px;
     }
 
-    .time-line {
-      margin-left: 10px;
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      padding: 0 0 30px 40px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 5px;
+    }
+
+    .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      left: 10px;
+      top: 3px;
+    }
+
+    .line {
+      position: absolute;
+      left: 18px;
+      top: 22px;
+      width: 2px;
+      height: 100%;
+      background: black;
+    }
+
+    .time-text {
+      font-size: 18px;
+      line-height: 1.7;
     }
   </style>
 </head>
@@ -53,84 +82,101 @@
 
   <h1>Schedule</h1>
 
-  <div class="schedule-box timeline">
-    <div class="day">1月15日（日）</div>
-    <div class="event">
-      <span class="time">22:15</span>
-      <span class="desc">バスタ新宿集合（4階）</span>
-    </div>
-    <div class="event">
-      <span class="time">22:40</span>
-      <span class="desc">出発</span>
+  <!-- 1日目 -->
+  <div class="day-block">
+    <div class="day-title">1月15日</div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">22:15　バスタ新宿集合（4階）</div>
     </div>
 
-    <div class="day">1月16日（月）</div>
-    <div class="event">
-      <span class="time">05:10</span>
-      <span class="desc">スキー場到着予定</span>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">22:40　出発</div>
     </div>
-    <div class="event">
-      <span class="time">07:00</span>
-      <span class="desc">フリータイム</span>
-    </div>
-    <div class="event">
-      <span class="time">16:00</span>
-      <span class="desc">ホテル</span>
-    </div>
-    <div class="event">
-      <span class="time">18:00</span>
-      <span class="desc">夕食</span>
-    </div>
-    <div class="event">
-      <span class="time">20:00</span>
-      <span class="desc">宴会</span>
-    </div>
+  </div>
 
-    <div class="day">1月17日（火）</div>
-    <div class="event">
-      <span class="time">07:30</span>
-      <span class="desc">朝食</span>
-    </div>
-    <div class="event">
-      <span class="time">09:00</span>
-      <span class="desc">ホテル出発</span>
-    </div>
-    <div class="event">
-      <span class="time">09:30</span>
-      <span class="desc">スキー場着</span>
-    </div>
-    <div class="event">
-      <span class="time">10:00</span>
-      <span class="desc">フリータイム</span>
-    </div>
-    <div class="event">
-      <span class="time">16:30</span>
-      <span class="desc">集合</span>
-    </div>
-    <div class="event">
-      <span class="time">17:30</span>
-      <span class="desc">出発</span>
-    </div>
-    <div class="event">
-      <span class="time">21:30</span>
-    <div class="time-line">22:15　バスタ新宿集合（4階）</div>
-    <div class="time-line">22:40　出発</div>
-
+  <!-- 2日目 -->
+  <div class="day-block">
     <div class="day-title">1月16日</div>
-    <div class="time-line">05:10　スキー場到着予定</div>
-    <div class="time-line">07:00　フリータイム</div>
-    <div class="time-line">16:00　ホテル</div>
-    <div class="time-line">18:00　夕食</div>
-    <div class="time-line">20:00　宴会</div>
 
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">05:10　スキー場到着予定</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">07:00　フリータイム</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">16:00　ホテル</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">18:00　夕食</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text">20:00　宴会</div>
+    </div>
+  </div>
+
+  <!-- 3日目 -->
+  <div class="day-block">
     <div class="day-title">1月17日</div>
-    <div class="time-line">07:30　朝食</div>
-    <div class="time-line">09:00　ホテル出発</div>
-    <div class="time-line">09:30　スキー場着</div>
-    <div class="time-line">10:00　フリータイム</div>
-    <div class="time-line">16:30　集合</div>
-    <div class="time-line">17:30　出発</div>
-    <div class="time-line">21:30　バスタ新宿着</div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">07:30　朝食</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">09:00　ホテル出発</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">09:30　スキー場着</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">10:00　フリータイム</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">16:30　集合</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="line"></div>
+      <div class="time-text">17:30　出発</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text">21:30　バスタ新宿着</div>
+    </div>
   </div>
 
 </body>
