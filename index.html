@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snowboard Camp 2025</title>
 
   <style>
@@ -11,77 +12,58 @@
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      min-height: 100vh;
-      color: white;
-    }
-
-    /* タイトル（黒字） */
-    .title {
-      font-size: 110px !important;
-      font-weight: 900;
-      margin-top: 120px;
-      color: black !important;
-      text-shadow:
-        0 0 20px rgba(255,255,255,0.95),
-        0 0 35px rgba(255,255,255,0.9);
-      letter-spacing: 4px;
-      line-height: 1.05;
-    }
-
-    /* ボタンを下へ配置 */
-    .menu-box {
-      margin-top: 300px;
+      background-repeat: no-repeat;
+      height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      font-family: "Arial", sans-serif;
+    }
+
+    /* タイトル */
+    .title {
+      margin-top: 40px;
+      color: black; /* 黒字 */
+      font-size: 42px; /* 大きめ */
+      font-weight: bold;
+      text-shadow: 0 0 8px white;
+    }
+
+    /* ボタンのエリア（画面下に配置） */
+    .button-area {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
       align-items: center;
-      gap: 32px;
     }
 
-    /* ★ ボタン背景を水色ベタ塗りに変更 */
-    .menu-btn {
-      display: block;
-      width: 360px;
-      padding: 26px 0;
-      font-size: 32px;
-      color: black; /* ← ここ黒文字にしたよ（白のままでもOK） */
+    /* ボタン本体 */
+    .btn {
+      width: 230px;
+      padding: 15px 0;
+      background-color: #a3d9ff;   /* 水色の背景 */
+      color: black;                /* 文字は黒 */
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px solid white;
       text-decoration: none;
-      background: rgb(120, 210, 255);  /* ← はっきり水色塗りつぶし */
-      border: 2px solid rgba(255,255,255,0.9);
-      border-radius: 22px;
-      transition: 0.25s;
-    }
-
-    /* ホバー時：濃い水色に */
-    .menu-btn:hover {
-      background: rgb(80, 180, 255);
-      transform: scale(1.08);
-    }
-
-    /* ▼ スマホ最適化 ▼ */
-    @media (max-width: 600px) {
-      .title {
-        font-size: 80px !important;
-        margin-top: 90px;
-      }
-
-      .menu-box {
-        margin-top: 230px;
-      }
-
-      .menu-btn {
-        width: 300px;
-        padding: 20px 0;
-        font-size: 29px;
-      }
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="title">
-    Snowboard Camp<br>2025
-  <
+  <div class="title">Snowboard Camp<br>2025</div>
+
+  <div class="button-area">
+    <a href="point.html" class="btn">POINT</a>
+    <a href="schedule.html" class="btn">SCHEDULE</a>
+    <a href="items.html" class="btn">ITEMS</a>
+  </div>
+
+</body>
+</html>
