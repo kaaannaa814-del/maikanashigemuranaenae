@@ -1,183 +1,268 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ITEMS</title>
 
-  <!-- フォント：Playfair Display -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Google Font: Spectral -->
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background-color: #f0f0f0;
-      font-family: "Arial", sans-serif;
-      color: #222;
+    :root{
+      --accent: #5d9ed8;
+      --bg1: #e9f3fb;
+      --card-bg: rgba(255,255,255,0.96);
+      --text: #0f2738;
+      --muted: #5b6b73;
+      --radius: 14px;
     }
 
-    /* タイトル */
-    .title {
-      text-align: center;
-      font-size: 42px;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      margin-bottom: 25px;
-      color: #000;
+    *{box-sizing: border-box}
+    body{
+      margin:0;
+      padding:22px;
+      min-height:100vh;
+      font-family: "Spectral", serif;
+      background: linear-gradient(180deg,var(--bg1),#f7fbff);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* セクションタイトル */
-    .section-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 25px 0 12px;
-      border-left: 6px solid #6aa6d8;
-      padding-left: 10px;
+    .container{
+      max-width:820px;
+      margin:0 auto;
     }
 
-    /* 1列表示アイテム */
-    .item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #ccc;
+    .title{
+      font-size:40px;
+      font-weight:700;
+      text-align:center;
+      margin:6px 0 20px;
+      color:#072033;
+      text-shadow:0 0 4px rgba(255,255,255,0.8);
     }
 
-    /* チェックボックス */
-    input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      accent-color: #6aa6d8;
+    .controls{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      margin-bottom:18px;
+      flex-wrap:wrap;
     }
 
-    /* ボタン */
-    .controls {
-      text-align: center;
-      margin-bottom: 20px;
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background:var(--accent);
+      color:#06202a;
+      font-weight:600;
+      text-decoration:none;
+      cursor:pointer;
+      box-shadow:0 3px 8px rgba(0,0,0,0.12);
+      border:none;
     }
 
-    .btn {
-      padding: 10px 15px;
-      border-radius: 8px;
-      background-color: #6aa6d8;
-      color: #fff;
-      border: none;
-      font-size: 14px;
-      cursor: pointer;
-      margin: 5px;
+    .btn.secondary{
+      background:#ffffff;
+      color:var(--accent);
+      border:2px solid var(--accent);
     }
 
-    .btn.secondary {
-      background-color: #fff;
-      color: #6aa6d8;
-      border: 2px solid #6aa6d8;
+    .card{
+      background:var(--card-bg);
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(15,30,40,0.08);
+    }
+
+    .section{
+      margin-bottom:20px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:12px;
+      font-weight:700;
+      color:#073147;
+      font-size:20px;
+    }
+
+    .section-title::before{
+      content:"";
+      display:inline-block;
+      width:8px;height:28px;
+      background:var(--accent);
+      border-radius:6px;
+    }
+
+    ul.items{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      grid-template-columns:1fr; /* 常に1列 */
+      gap:10px 18px;
+    }
+
+    li.item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:8px 10px;
+      border-radius:10px;
+      transition:background .15s;
+    }
+
+    li.item:hover{background:rgba(13,49,70,0.03)}
+
+    input[type="checkbox"]{
+      width:22px;
+      height:22px;
+      accent-color:var(--accent);
+      flex:0 0 auto;
+      cursor:pointer;
+    }
+
+    .label-text{
+      font-size:16px;
+      color:var(--text);
+      line-height:1.2;
+      word-break:break-word;
+    }
+
+    .muted{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+      margin-top:4px;
+      font-weight:400;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:18px;
+    }
+
+    @media (max-width:480px){
+      .title{font-size:32px}
+      ul.items{grid-template-columns:1fr;} /* モバイルでも1列 */
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="title">ITEMS</div>
 
-  <div class="title">ITEMS</div>
+    <div class="controls" aria-hidden="false">
+      <button class="btn" id="checkAllBtn">すべてチェック</button>
+      <button class="btn secondary" id="clearAllBtn">すべてクリア</button>
+      <!-- 印刷ボタンは削除 -->
+    </div>
 
-  <!-- ボタン（印刷なし） -->
-  <div class="controls">
-    <button class="btn" id="checkAllBtn">すべてチェック</button>
-    <button class="btn secondary" id="clearAllBtn">すべてクリア</button>
+    <div class="card" role="region" aria-label="持ち物リスト">
+      <!-- 日用品 -->
+      <div class="section">
+        <div class="section-title">日用品</div>
+        <ul class="items" id="section-1"></ul>
+      </div>
+
+      <!-- 電子機器 -->
+      <div class="section">
+        <div class="section-title">電子機器</div>
+        <ul class="items" id="section-2"></ul>
+      </div>
+
+      <!-- 衣類 -->
+      <div class="section">
+        <div class="section-title">衣類</div>
+        <ul class="items" id="section-3"></ul>
+      </div>
+
+      <!-- 貴重品 -->
+      <div class="section">
+        <div class="section-title">貴重品</div>
+        <ul class="items" id="section-4"></ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="muted">チェックは自動で保存されます。再度ページを開くと状態が復元されます。</p>
+    </div>
   </div>
 
-  <!-- セクション：日用品 -->
-  <div class="section-title">日用品</div>
-  <div id="section-1"></div>
-
-  <!-- 電子機器 -->
-  <div class="section-title">電子機器</div>
-  <div id="section-2"></div>
-
-  <!-- 衣類 -->
-  <div class="section-title">衣類</div>
-  <div id="section-3"></div>
-
-  <!-- 貴重品 -->
-  <div class="section-title">貴重品</div>
-  <div id="section-4"></div>
-
-
   <script>
-    // アイテム一覧
     const itemsData = {
       "section1": [
-        "雨具", "カイロ", "歯ブラシ", "ハンカチ", "ティッシュ",
-        "眼鏡・コンタクト", "日焼け止め", "ドライヤー・ヘアアイロン",
-        "シャンプー・コンディショナー（備え付け有）",
-        "洗顔料・メイク落とし・化粧品", "剃刀・髭剃り",
-        "くし・整髪料", "生理用品", "常備薬"
+        "雨具","カイロ","歯ブラシ","ハンカチ","ティッシュ","眼鏡・コンタクト","日焼け止め",
+        "ドライヤー・ヘアアイロン","シャンプー・コンディショナー（備え付け有）",
+        "洗顔料・メイク落とし・化粧品","剃刀・髭剃り","くし・整髪料","生理用品","常備薬"
       ],
-      "section2": ["スマホ", "充電器", "モバイルバッテリー"],
-      "section3": [
-        "スノーボードウェア・ズボン", "着替え", "下着・靴下",
-        "パジャマ", "上着", "バスタオル"
-      ],
-      "section4": [
-        "財布", "合宿費",
-        "小物レンタル料＋保証料（最大1600円）",
-        "2日目・3日目の昼食代",
-        "マイナンバーカード"
-      
+      "section2": ["スマホ","充電器","モバイルバッテリー"],
+      "section3": ["スノーボードウェア・ズボン","着替え","下着・靴下","パジャマ","上着","バスタオル"],
+      "section4": ["財布","合宿費","レンタル料＋保証料（最大4000円）","2日目・3日目の昼食代","マイナンバーカード"]
     };
 
-    const map = {
+    const sectionMap = {
       "section-1": "section1",
       "section-2": "section2",
       "section-3": "section3",
       "section-4": "section4"
     };
 
-    let index = 0;
+    let globalIndex = 0;
 
-    window.onload = () => {
-      Object.keys(map).forEach(id => {
-        const sec = document.getElementById(id);
-        itemsData[map[id]].forEach(text => {
-          
-          const div = document.createElement("div");
-          div.className = "item";
+    document.addEventListener('DOMContentLoaded', () => {
+      Object.keys(sectionMap).forEach(sectionId => {
+        const key = sectionMap[sectionId];
+        const container = document.getElementById(sectionId);
 
-          const check = document.createElement("input");
-          check.type = "checkbox";
-          check.id = "item" + index;
+        itemsData[key].forEach(text => {
+          const li = document.createElement('li');
+          li.className = 'item';
 
-          const storageKey = "ITEMS_" + check.id;
-          const saved = localStorage.getItem(storageKey);
-          if (saved === "true") check.checked = true;
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          const id = 'item-' + globalIndex;
+          checkbox.id = id;
 
-          check.addEventListener("change", () => {
-            localStorage.setItem(storageKey, check.checked);
-          });
-
-          const label = document.createElement("label");
-          label.setAttribute("for", check.id);
+          const label = document.createElement('label');
+          label.setAttribute('for', id);
+          label.className = 'label-text';
           label.textContent = text;
 
-          div.appendChild(check);
-          div.appendChild(label);
-          sec.appendChild(div);
+          const storageKey = 'items_check_' + id;
+          const saved = localStorage.getItem(storageKey);
+          if (saved === 'true') checkbox.checked = true;
 
-          index++;
+          checkbox.addEventListener('change', () => {
+            localStorage.setItem(storageKey, checkbox.checked);
+          });
+
+          li.appendChild(checkbox);
+          li.appendChild(label);
+          container.appendChild(li);
+
+          globalIndex++;
         });
       });
 
-      document.getElementById("checkAllBtn").onclick = () => setAll(true);
-      document.getElementById("clearAllBtn").onclick = () => setAll(false);
-    };
+      document.getElementById('checkAllBtn').addEventListener('click', () => setAll(true));
+      document.getElementById('clearAllBtn').addEventListener('click', () => setAll(false));
+    });
 
-    function setAll(flag) {
-      document.querySelectorAll("input[type='checkbox']").forEach(cb => {
-        cb.checked = flag;
-        localStorage.setItem("ITEMS_" + cb.id, flag);
+    function setAll(checked){
+      const inputs = document.querySelectorAll('input[type="checkbox"]');
+      inputs.forEach(cb => {
+        cb.checked = checked;
+        const storageKey = 'items_check_' + cb.id;
+        localStorage.setItem(storageKey, cb.checked);
       });
     }
   </script>
-
 </body>
 </html>
