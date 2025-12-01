@@ -2,66 +2,79 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>SCHEDULE - Snowboard Camp 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(#cfefff, #e8f9ff);
+      font-family: 'Playfair Display', serif;
+      background: #f7f7f7;
+      color: #2b2b2b;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 38px;
       text-align: center;
-      min-height: 100vh;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
     }
 
-    .title {
-      font-size: 55px;
-      font-weight: bold;
-      margin-top: 70px;
-      color: #0a0a0a;
-    }
-
-    .box {
-      margin: 50px auto;
-      width: 85%;
-      max-width: 600px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 18px;
-      padding: 30px;
-      color: #000;
+    .schedule-box {
+      max-width: 750px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       line-height: 1.8;
-      font-size: 20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+      font-size: 18px;
     }
 
-    a {
-      display: inline-block;
-      margin-top: 40px;
+    .day-title {
       font-size: 22px;
-      color: #000;
-      background: #4ecbff;
-      padding: 14px 30px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border-left: 5px solid #000;
+      padding-left: 10px;
     }
 
-    a:hover {
-      opacity: 0.85;
+    .time-line {
+      margin-left: 10px;
     }
   </style>
 </head>
-
 <body>
-  <div class="title">SCHEDULE</div>
 
-  <div class="box">
-    8:30　集合<br>
-    9:00　レッスン開始<br>
-    12:00　お昼休憩<br>
-    13:00　午後レッスン<br>
-    16:00　終了予定
+  <h1>Schedule</h1>
+
+  <div class="schedule-box">
+    <div class="day-title">1月15日</div>
+    <div class="time-line">22:15　バスタ新宿集合（4階）</div>
+    <div class="time-line">22:40　出発</div>
+
+    <div class="day-title">1月16日</div>
+    <div class="time-line">05:10　スキー場到着予定</div>
+    <div class="time-line">07:00　フリータイム</div>
+    <div class="time-line">16:00　ホテル</div>
+    <div class="time-line">18:00　夕食</div>
+    <div class="time-line">20:00　宴会</div>
+
+    <div class="day-title">1月17日</div>
+    <div class="time-line">07:30　朝食</div>
+    <div class="time-line">09:00　ホテル出発</div>
+    <div class="time-line">09:30　スキー場着</div>
+    <div class="time-line">10:00　フリータイム</div>
+    <div class="time-line">16:30　集合</div>
+    <div class="time-line">17:30　出発</div>
+    <div class="time-line">21:30　バスタ新宿着</div>
   </div>
 
-  <a href="index.html">← ホームへ戻る</a>
 </body>
 </html>
+
