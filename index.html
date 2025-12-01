@@ -11,13 +11,15 @@
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       font-family: 'Arial', sans-serif;
       color: white;
       text-align: center;
+      min-height: 100vh;
     }
 
     .title {
-      font-size: 60px;
+      font-size: 72px; /* ← 60 → 72 にUP */
       font-weight: 700;
       margin-top: 120px;
       text-shadow: 0 0 20px rgba(0,0,0,0.7);
@@ -26,23 +28,23 @@
     }
 
     .menu-box {
-      margin-top: 140px;
+      margin-top: 150px; /* 少し広げた */
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
       align-items: center;
     }
 
     .menu-btn {
       display: block;
-      width: 260px;
-      padding: 15px 0;
-      font-size: 22px;
+      width: 300px; /* ← 260 → 300 にUP */
+      padding: 18px 0; /* ボタン高UP */
+      font-size: 26px; /* ← 22 → 26 にUP */
       color: white;
       text-decoration: none;
       background: rgba(0,0,0,0.45);
       border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 15px;
+      border-radius: 18px;
       backdrop-filter: blur(3px);
       transition: 0.25s;
     }
@@ -50,6 +52,29 @@
     .menu-btn:hover {
       background: rgba(0,0,0,0.7);
       transform: scale(1.05);
+    }
+
+    /* ▼▼ スマホ最適化 ▼▼ */
+    @media (max-width: 600px) {
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+      }
+
+      .title {
+        font-size: 55px; /* ← スマホでもやや大きめ */
+        margin-top: 90px;
+      }
+
+      .menu-btn {
+        width: 260px;  /* ← スマホも少し大きめ */
+        font-size: 24px;
+        padding: 15px 0;
+      }
+
+      .menu-box {
+        margin-top: 120px;
+      }
     }
   </style>
 </head>
