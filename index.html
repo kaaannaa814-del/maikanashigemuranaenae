@@ -11,8 +11,20 @@
       padding: 0;
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center top;
       background-repeat: no-repeat;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        background-position: center;
+      }
+      .title {
+        font-size: 36px;
+        padding-top: 40px;
+      }
     }
 
     .title {
@@ -20,14 +32,54 @@
       color: white;
       text-align: center;
       padding-top: 50px;
-      font-family: Arial, sans-serif;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    /* ボタン配置用のボックス */
+    .menu-box {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    /* ボタンデザイン */
+    .menu-button {
+      width: 200px;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background: rgba(0,0,0,0.6);
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+    }
+
+    .menu-button:hover {
+      background: rgba(255,255,255,0.8);
+      color: black;
+      transform: scale(1.05);
     }
   </style>
 </head>
 
 <body>
+
   <div class="title">
     Snowboard Camp<br>2025
   </div>
+
+  <!-- ナビゲーションボタン -->
+  <div class="menu-box">
+    <a class="menu-button" href="point.html">POINT</a>
+    <a class="menu-button" href="schedule.html">SCHEDULE</a>
+    <a class="menu-button" href="items.html">ITEMS</a>
+  </div>
+
 </body>
 </html>
