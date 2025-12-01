@@ -13,12 +13,11 @@
       margin: 0;
       padding: 20px;
       font-family: "Arial", sans-serif;
-      background: linear-gradient(180deg, #e3edf5, #f7fbff); /* 優しい淡い水色〜白グラデーション */
+      background: linear-gradient(180deg, #e3edf5, #f7fbff);
       min-height: 100vh;
       color: #1a2d3b;
     }
 
-    /* タイトル：Spectral で大人っぽく上品に */
     .title {
       font-family: 'Spectral', serif;
       font-size: 44px;
@@ -95,51 +94,72 @@
 
     <div class="section-title">日用品</div>
     <ul>
-      <li><input type="checkbox">雨具</li>
-      <li><input type="checkbox">カイロ</li>
-      <li><input type="checkbox">歯ブラシ</li>
-      <li><input type="checkbox">ハンカチ</li>
-      <li><input type="checkbox">ティッシュ</li>
-      <li><input type="checkbox">眼鏡・コンタクト</li>
-      <li><input type="checkbox">日焼け止め</li>
-      <li><input type="checkbox">ドライヤー・ヘアアイロン</li>
-      <li><input type="checkbox">シャンプー・コンディショナー（備え付け有）</li>
-      <li><input type="checkbox">洗顔料・メイク落とし・化粧品</li>
-      <li><input type="checkbox">剃刀・髭剃り</li>
-      <li><input type="checkbox">くし・整髪料</li>
-      <li><input type="checkbox">生理用品</li>
-      <li><input type="checkbox">常備薬</li>
+      <li><input type="checkbox" id="item0">雨具</li>
+      <li><input type="checkbox" id="item1">カイロ</li>
+      <li><input type="checkbox" id="item2">歯ブラシ</li>
+      <li><input type="checkbox" id="item3">ハンカチ</li>
+      <li><input type="checkbox" id="item4">ティッシュ</li>
+      <li><input type="checkbox" id="item5">眼鏡・コンタクト</li>
+      <li><input type="checkbox" id="item6">日焼け止め</li>
+      <li><input type="checkbox" id="item7">ドライヤー・ヘアアイロン</li>
+      <li><input type="checkbox" id="item8">シャンプー・コンディショナー（備え付け有）</li>
+      <li><input type="checkbox" id="item9">洗顔料・メイク落とし・化粧品</li>
+      <li><input type="checkbox" id="item10">剃刀・髭剃り</li>
+      <li><input type="checkbox" id="item11">くし・整髪料</li>
+      <li><input type="checkbox" id="item12">生理用品</li>
+      <li><input type="checkbox" id="item13">常備薬</li>
     </ul>
 
     <div class="section-title">電子機器</div>
     <ul>
-      <li><input type="checkbox">スマホ</li>
-      <li><input type="checkbox">充電器</li>
-      <li><input type="checkbox">モバイルバッテリー</li>
+      <li><input type="checkbox" id="item14">スマホ</li>
+      <li><input type="checkbox" id="item15">充電器</li>
+      <li><input type="checkbox" id="item16">モバイルバッテリー</li>
     </ul>
 
     <div class="section-title">衣類</div>
     <ul>
-      <li><input type="checkbox">スノーボードウェア・ズボン</li>
-      <li><input type="checkbox">着替え</li>
-      <li><input type="checkbox">下着・靴下</li>
-      <li><input type="checkbox">パジャマ</li>
-      <li><input type="checkbox">上着</li>
-      <li><input type="checkbox">バスタオル</li>
+      <li><input type="checkbox" id="item17">スノーボードウェア・ズボン</li>
+      <li><input type="checkbox" id="item18">着替え</li>
+      <li><input type="checkbox" id="item19">下着・靴下</li>
+      <li><input type="checkbox" id="item20">パジャマ</li>
+      <li><input type="checkbox" id="item21">上着</li>
+      <li><input type="checkbox" id="item22">バスタオル</li>
     </ul>
 
     <div class="section-title">貴重品</div>
     <ul>
-      <li><input type="checkbox">財布</li>
-      <li><input type="checkbox">合宿費</li>
-      <li><input type="checkbox">レンタル料＋保証料（最大4000円）</li>
-      <li><input type="checkbox">2日目・3日目の昼食代</li>
-      <li><input type="checkbox">マイナンバーカード</li>
+      <li><input type="checkbox" id="item23">財布</li>
+      <li><input type="checkbox" id="item24">合宿費</li>
+      <li><input type="checkbox" id="item25">レンタル料＋保証料（最大4000円）</li>
+      <li><input type="checkbox" id="item26">2日目・3日目の昼食代</li>
+      <li><input type="checkbox" id="item27">マイナンバーカード</li>
     </ul>
 
   </div>
 
   <a href="index.html" class="back-btn">戻る</a>
+
+  <script>
+    // チェック状態を localStorage に保存・復元
+    const totalItems = 28; // チェックボックスの数
+
+    window.addEventListener('DOMContentLoaded', () => {
+      for(let i=0; i<totalItems; i++){
+        const checkbox = document.getElementById('item'+i);
+        // 保存済みの状態を復元
+        const saved = localStorage.getItem('item'+i);
+        if(saved === 'true'){
+          checkbox.checked = true;
+        }
+
+        // チェックが変わったら保存
+        checkbox.addEventListener('change', () => {
+          localStorage.setItem('item'+i, checkbox.checked);
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
