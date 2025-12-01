@@ -32,7 +32,7 @@
       margin-bottom: 40px;
       letter-spacing: 1px;
       color: var(--text);
-      font-weight: 700; /* 太字 */
+      font-weight: 700;
     }
 
     .day-block {
@@ -42,28 +42,29 @@
       background: var(--card-bg);
       border-radius: 14px;
       box-shadow: 0 6px 18px rgba(15,30,40,0.06);
+      position: relative;
     }
 
     .day-title {
       display: inline-block;
       font-size: 28px;
-      font-weight: 700; /* 太字 */
+      font-weight: 700;
       margin: 6px 0 18px 8px;
       background: rgba(93,162,224,0.12);
       padding: 8px 14px;
       border-radius: 10px;
-      color: var(--accent-strong);
+      color: #000000; /* 黒に変更 */
     }
 
     .timeline {
       position: relative;
-      padding-left: 32px; /* 縦線＋円＋余白 */
+      padding-left: 40px; /* 縦線＋円＋余白 */
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 12px; /* 縦線位置 */
+      left: 20px; /* 縦線位置を中央に */
       top: 0;
       bottom: 0;
       width: 4px;
@@ -74,15 +75,13 @@
     .timeline-item {
       position: relative;
       padding: 12px 0 22px 0;
-      display: flex;
-      align-items: flex-start;
     }
 
     .timeline-item:last-child { padding-bottom: 6px }
 
     .circle {
       position: absolute;
-      left: 4px; /* 縦線中央 */
+      left: 12px; /* 縦線中央に */
       top: 50%;
       transform: translateY(-50%);
       width: 16px;
@@ -98,7 +97,7 @@
       color: var(--text);
       line-height: 1.6;
       margin-left: 24px;
-      font-weight: 600; /* 太字で読みやすく */
+      font-weight: 600;
     }
 
     .time-strong {
@@ -113,9 +112,9 @@
       .day-title{font-size:22px;padding:6px 10px}
       .time-text{font-size:16px}
       .day-block{max-width:100%; padding:14px;}
-      .timeline{padding-left:28px;}
-      .timeline::before{left:10px;}
-      .circle{left:0;}
+      .timeline{padding-left:32px;}
+      .timeline::before{left:16px;}
+      .circle{left:8px;}
     }
   </style>
 </head>
