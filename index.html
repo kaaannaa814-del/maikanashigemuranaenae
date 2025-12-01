@@ -6,52 +6,28 @@
   <title>Snowboard Camp 2025</title>
 
   <style>
-    /* 背景をスマホでもPCでも綺麗に表示 */
     body {
       margin: 0;
       padding: 0;
-      background-image: url("images/snowboard115.jpg"); /* ←背景写真のパス */
-      background-size: cover;        /* 画面いっぱいに拡大 */
-      background-position: center;   /* 真ん中を見せる */
+      background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
-      height: 100vh;                 /* 全画面 */
-      font-family: 'Arial', sans-serif;
+    }
+
+    .title {
+      font-size: 48px;
       color: white;
       text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* タイトルのスタイル */
-    .title-box {
-      background: rgba(0, 0, 0, 0.4); /* うっすら黒背景で見やすく */
-      padding: 20px 30px;
-      border-radius: 20px;
-      backdrop-filter: blur(4px);
-    }
-
-    .title-box h1 {
-      font-size: 40px;
-      margin: 0;
-    }
-
-    /* スマホ向け */
-    @media (max-width: 768px) {
-      body {
-        background-size: cover;
-        background-position: center; /* 必要なら top に変更可能 */
-      }
-      .title-box h1 {
-        font-size: 30px;
-      }
+      padding-top: 50px;
+      font-family: Arial, sans-serif;
     }
   </style>
 </head>
 
 <body>
-  <div class="title-box">
-    <h1>Snowboard Camp 2025</h1>
+  <div class="title">
+    Snowboard Camp<br>2025
   </div>
 </body>
 </html>
