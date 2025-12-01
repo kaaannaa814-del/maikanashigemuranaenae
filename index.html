@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Snowboard Camp 2025</title>
-  <link rel="stylesheet" href="style.css">
+
   <style>
     body {
       margin: 0;
@@ -11,71 +11,64 @@
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      font-family: 'Arial', sans-serif;
-      color: white;
+      font-family: 'Arial', sans-serif';
       text-align: center;
       min-height: 100vh;
     }
 
-    /* ★ タイトルさらに大きく */
+    /* ★ タイトル黒字 ＋ 白グローでクッキリ */
     .title {
-      font-size: 85px;  /* ← 72 → 85 */
-      font-weight: 700;
-      margin-top: 130px;
-      text-shadow: 0 0 25px rgba(0,0,0,0.75);
-      letter-spacing: 3px;
-      line-height: 1.15;
+      font-size: 95px;
+      font-weight: 800;
+      margin-top: 120px;
+      color: black;  
+      text-shadow:
+        0 0 15px rgba(255,255,255,0.9),
+        0 0 25px rgba(255,255,255,0.8),
+        0 0 40px rgba(255,255,255,0.7);
+      letter-spacing: 4px;
+      line-height: 1.1;
     }
 
     .menu-box {
-      margin-top: 170px; 
+      margin-top: 160px;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 32px;
       align-items: center;
     }
 
-    /* ★ ボタンもさらに大きく */
     .menu-btn {
       display: block;
-      width: 340px;      /* ← 300 → 340 */
-      padding: 22px 0;   /* ← 18px → 22px */
-      font-size: 30px;   /* ← 26 → 30 */
+      width: 360px;
+      padding: 26px 0;
+      font-size: 32px;
       color: white;
       text-decoration: none;
       background: rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 22px;
       backdrop-filter: blur(3px);
       transition: 0.25s;
     }
 
     .menu-btn:hover {
       background: rgba(0,0,0,0.75);
-      transform: scale(1.07);
+      transform: scale(1.08);
     }
 
-    /* ▼▼ スマホ最適化 ▼▼ */
     @media (max-width: 600px) {
-      body {
-        background-attachment: scroll;
-        background-position: center top;
-      }
-
       .title {
-        font-size: 65px;  /* ← 55 → 65 */
-        margin-top: 90px;
+        font-size: 70px;
+        margin-top: 85px;
       }
-
       .menu-btn {
-        width: 290px;     /* ← 260 → 290 */
-        font-size: 27px;  /* ← 24 → 27 */
-        padding: 18px 0;
+        width: 300px;
+        padding: 20px 0;
+        font-size: 29px;
       }
-
       .menu-box {
-        margin-top: 130px;
+        margin-top: 120px;
       }
     }
   </style>
@@ -83,9 +76,7 @@
 
 <body>
 
-  <div class="title">
-    Snowboard Camp<br>2025
-  </div>
+  <div class="title">Snowboard Camp<br>2025</div>
 
   <div class="menu-box">
     <a href="point.html" class="menu-btn">POINT</a>
