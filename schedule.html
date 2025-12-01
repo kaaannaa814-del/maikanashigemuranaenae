@@ -9,12 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
+    :root{
+      --accent: #5DA7E0; /* ブルー系アクセント */
+      --accent-strong: #2f86c8;
+      --bg: #f7f9fc;
+      --card-bg: #ffffff;
+      --text: #143240;
+      --muted: #6b7b85;
+    }
+
     body {
       margin: 0;
       padding: 20px;
       font-family: 'Playfair Display', serif;
-      background: #f7f7f7;
-      color: #2b2b2b;
+      background: var(--bg);
+      color: var(--text);
     }
 
     h1 {
@@ -22,59 +31,81 @@
       text-align: center;
       margin-bottom: 40px;
       letter-spacing: 1px;
+      color: var(--text);
     }
 
     .day-block {
-      max-width: 750px;
-      margin: 0 auto 50px auto;
-      padding: 20px 10px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 820px;
+      margin: 0 auto 36px auto;
+      padding: 18px 18px 24px 18px;
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(15,30,40,0.06);
     }
 
     .day-title {
+      display: inline-block;
       font-size: 28px;
       font-weight: 700;
-      text-align: left;
-      margin: 10px 0 25px 10px;
-      border-left: 6px solid black;
-      padding-left: 12px;
+      margin: 6px 0 18px 8px;
+      background: rgba(93,162,224,0.12); /* 薄い水色 */
+      padding: 8px 14px;
+      border-radius: 10px;
+      color: var(--accent-strong);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 48px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-strong));
+      border-radius: 2px;
     }
 
     .timeline-item {
+      position: relative;
+      padding: 10px 12px 22px 0;
       display: flex;
       align-items: flex-start;
-      position: relative;
-      padding: 0 0 30px 40px;
+      gap: 10px;
     }
 
-    .timeline-item:last-child {
-      padding-bottom: 5px;
-    }
+    .timeline-item:last-child { padding-bottom: 6px }
 
     .circle {
-      width: 18px;
-      height: 18px;
+      position: absolute;
+      left: 14px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      background: black;
-      position: absolute;
-      left: 10px;
-      top: 3px;
-    }
-
-    .line {
-      position: absolute;
-      left: 18px;
-      top: 22px;
-      width: 2px;
-      height: 100%;
-      background: black;
+      background: var(--card-bg);
+      border: 4px solid var(--accent);
+      box-shadow: 0 2px 6px rgba(93,162,224,0.18);
     }
 
     .time-text {
       font-size: 18px;
-      line-height: 1.7;
+      color: var(--text);
+      line-height: 1.6;
+      margin-left: 12px;
+    }
+
+    .time-strong{ font-weight:700; color: var(--accent-strong); margin-right:8px}
+
+    /* responsive */
+    @media (max-width:600px){
+      h1{font-size:34px}
+      .day-title{font-size:22px;padding:6px 10px}
+      .time-text{font-size:16px}
     }
   </style>
 </head>
@@ -84,98 +115,92 @@
 
   <!-- 1日目 -->
   <div class="day-block">
-    <div class="day-title">1月15日</div>
+    <div class="day-title">1月15日（木）</div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">22:15　バスタ新宿集合（4階）</div>
-    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">22:15</span>バスタ新宿集合（4階）</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">22:40　出発</div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">22:40</span>出発</div>
+      </div>
     </div>
   </div>
 
   <!-- 2日目 -->
   <div class="day-block">
-    <div class="day-title">1月16日</div>
+    <div class="day-title">1月16日（金）</div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">05:10　スキー場到着予定</div>
-    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">05:10</span>スキー場到着予定</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">07:00　フリータイム</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">07:00</span>フリータイム</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">16:00　ホテル</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">16:00</span>ホテル</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">18:00　夕食</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">18:00</span>夕食</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="time-text">20:00　宴会</div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">20:00</span>宴会</div>
+      </div>
     </div>
   </div>
 
   <!-- 3日目 -->
   <div class="day-block">
-    <div class="day-title">1月17日</div>
+    <div class="day-title">1月17日（土）</div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">07:30　朝食</div>
-    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">07:30</span>朝食</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">09:00　ホテル出発</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">09:00</span>ホテル出発</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">09:30　スキー場着</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">09:30</span>スキー場着</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">10:00　フリータイム</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">10:00</span>フリータイム</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">16:30　集合</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">16:30</span>集合</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="line"></div>
-      <div class="time-text">17:30　出発</div>
-    </div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">17:30</span>出発</div>
+      </div>
 
-    <div class="timeline-item">
-      <div class="circle"></div>
-      <div class="time-text">21:30　バスタ新宿着</div>
+      <div class="timeline-item">
+        <div class="circle"></div>
+        <div class="time-text"><span class="time-strong">21:30</span>バスタ新宿着</div>
+      </div>
     </div>
   </div>
 
