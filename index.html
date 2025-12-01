@@ -11,33 +11,35 @@
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
       background-position: center;
-      font-family: 'Arial', sans-serif';
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
       text-align: center;
       min-height: 100vh;
+      color: white; /* ← 他の文字は白 */
     }
 
-    /* ★ タイトル黒字 ＋ 白グローでクッキリ */
+    /* ★ タイトル：黒字で絶対反映 ＋ 大きく */
     .title {
-      font-size: 95px;
-      font-weight: 800;
+      font-size: 110px !important;   /* 超大きく */
+      font-weight: 900;
       margin-top: 120px;
-      color: black;  
+      color: black !important;       /* 強制黒字 */
       text-shadow:
-        0 0 15px rgba(255,255,255,0.9),
-        0 0 25px rgba(255,255,255,0.8),
-        0 0 40px rgba(255,255,255,0.7);
+        0 0 20px rgba(255,255,255,0.95),
+        0 0 35px rgba(255,255,255,0.9); /* 白い光で読みやすい */
       letter-spacing: 4px;
-      line-height: 1.1;
+      line-height: 1.05;
     }
 
     .menu-box {
       margin-top: 160px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
       align-items: center;
+      gap: 32px;
     }
 
+    /* ★ ボタン大きめ & 見やすく */
     .menu-btn {
       display: block;
       width: 360px;
@@ -57,26 +59,35 @@
       transform: scale(1.08);
     }
 
+    /* ▼▼ スマホ最適化 ▼▼ */
     @media (max-width: 600px) {
-      .title {
-        font-size: 70px;
-        margin-top: 85px;
+      body {
+        background-attachment: scroll;
       }
+
+      .title {
+        font-size: 80px !important;  /* スマホに最適 */
+        margin-top: 90px;
+      }
+
       .menu-btn {
         width: 300px;
         padding: 20px 0;
         font-size: 29px;
       }
+
       .menu-box {
-        margin-top: 120px;
+        margin-top: 130px;
       }
     }
   </style>
+
 </head>
 
 <body>
-
-  <div class="title">Snowboard Camp<br>2025</div>
+  <div class="title">
+    Snowboard Camp<br>2025
+  </div>
 
   <div class="menu-box">
     <a href="point.html" class="menu-btn">POINT</a>
@@ -86,4 +97,3 @@
 
 </body>
 </html>
-
