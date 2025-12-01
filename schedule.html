@@ -36,7 +36,6 @@ h1 {
   background: var(--card-bg);
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  position: relative;
 }
 
 .day-title {
@@ -58,7 +57,7 @@ h1 {
 .timeline::before {
   content: "";
   position: absolute;
-  left: 26px; /* 縦線の左端 */
+  left: 28px; /* 縦線中央 */
   top: 0;
   bottom: 0;
   width: 4px;
@@ -67,30 +66,28 @@ h1 {
 }
 
 .timeline-item {
+  display: flex;
+  align-items: center; /* 丸とテキストを縦中央揃え */
   position: relative;
-  padding: 12px 0 22px 0;
+  padding: 12px 0;
 }
 
-.timeline-item:last-child { padding-bottom: 6px }
-
-/* 丸を縦線の中央に完全揃え */
 .circle {
-  position: absolute;
-  left: 28px; /* 縦線中央 (線幅4pxの半分を足す) */
-  top: 50%;
   width: 16px;
   height: 16px;
-  margin-top: -10px; /* circleの半分(16px/2) + border4px/2 = -10px */
   border-radius: 50%;
   background: var(--card-bg);
   border: 4px solid var(--accent);
   box-shadow: 0 2px 6px rgba(74,144,226,0.18);
+  margin-right: 16px;
+  flex-shrink: 0; /* 丸のサイズを固定 */
+  position: relative;
+  left: -12px; /* 縦線に合わせて調整 */
 }
 
 .time-text {
   font-size: 18px;
   line-height: 1.6;
-  margin-left: 44px; /* 丸の右端から */
   font-weight: 600;
 }
 
@@ -103,11 +100,11 @@ h1 {
 @media (max-width:600px){
   h1{font-size:34px}
   .day-title{font-size:22px;padding:6px 10px}
-  .time-text{font-size:16px;margin-left:36px;}
+  .time-text{font-size:16px;}
   .day-block{max-width:100%; padding:14px;}
   .timeline{padding-left:36px;}
-  .timeline::before{left:20px;}
-  .circle{left:22px;margin-top:-10px;}
+  .timeline::before{left:22px;}
+  .circle{left:0;margin-right:12px;}
 }
 </style>
 </head>
