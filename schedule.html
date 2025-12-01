@@ -29,7 +29,6 @@ h1 {
   font-weight: 700;
 }
 
-/* 日ごとのブロック */
 .day-block {
   max-width: 820px;
   margin: 0 auto 36px auto;
@@ -40,7 +39,6 @@ h1 {
   position: relative;
 }
 
-/* 日付タイトル */
 .day-title {
   display: inline-block;
   font-size: 28px;
@@ -52,17 +50,15 @@ h1 {
   color: #000000;
 }
 
-/* タイムライン全体 */
 .timeline {
   position: relative;
   padding-left: 44px;
 }
 
-/* 縦線 */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 26px; /* 線の中央 */
+  left: 26px; /* 丸と完全に揃える */
   top: 0;
   bottom: 0;
   width: 4px;
@@ -70,18 +66,18 @@ h1 {
   border-radius: 2px;
 }
 
-/* 各イベント */
 .timeline-item {
   position: relative;
-  padding: 16px 0; /* 上下間隔 */
+  padding: 12px 0 22px 0;
 }
 
-/* 丸（〇） */
+.timeline-item:last-child { padding-bottom: 6px }
+
 .circle {
   position: absolute;
-  left: 26px; /* 線中央 */
+  left: 26px; /* timeline::before と完全一致 */
   top: 50%;
-  transform: translate(-50%, -50%); /* 完全中央揃え */
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -90,8 +86,107 @@ h1 {
   box-shadow: 0 2px 6px rgba(74,144,226,0.18);
 }
 
-/* 時刻テキスト */
 .time-text {
   font-size: 18px;
   line-height: 1.6;
-  margin-left: 40px; /* 丸との距離*
+  margin-left: 36px; /* 丸の右端からスタート */
+  font-weight: 600;
+}
+
+.time-strong {
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-right: 8px;
+}
+
+@media (max-width:600px){
+  h1{font-size:34px}
+  .day-title{font-size:22px;padding:6px 10px}
+  .time-text{font-size:16px;margin-left:28px;}
+  .day-block{max-width:100%; padding:14px;}
+  .timeline{padding-left:36px;}
+  .timeline::before{left:20px;}
+  .circle{left:20px;}
+}
+</style>
+</head>
+<body>
+
+<h1>Schedule</h1>
+
+<div class="day-block">
+  <div class="day-title">1月15日（木）</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">22:15</span>バスタ新宿集合（4階）</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">22:40</span>出発</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-block">
+  <div class="day-title">1月16日（金）</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">05:10</span>スキー場到着予定</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">07:00</span>フリータイム</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">16:00</span>ホテル</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">18:00</span>夕食</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">20:00</span>宴会</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-block">
+  <div class="day-title">1月17日（土）</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">07:30</span>朝食</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">09:00</span>ホテル出発</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">09:30</span>スキー場着</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">10:00</span>フリータイム</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">16:30</span>集合</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">17:30</span>出発</div>
+    </div>
+    <div class="timeline-item">
+      <div class="circle"></div>
+      <div class="time-text"><span class="time-strong">21:30</span>バスタ新宿着</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
