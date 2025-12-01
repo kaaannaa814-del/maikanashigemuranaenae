@@ -3,113 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Items</title>
+  <title>Items Checklist</title>
 
   <style>
     body {
       margin: 0;
       padding: 20px;
-      background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
-      background-size: cover;
-      background-position: center;
       font-family: "Arial", sans-serif;
-      color: black;
-      text-shadow: 0 0 6px white;
+      background: linear-gradient(180deg, #c9eaff, #e7f6ff);
+      min-height: 100vh;
     }
 
+    /* タイトル */
     .title {
-      font-size: 38px;
+      font-size: 40px;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: #003b66;
+      text-shadow: 0 0 4px white;
+    }
+
+    /* カード背景 */
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      max-width: 700px;
+      margin: 0 auto;
+      backdrop-filter: blur(4px);
     }
 
     .section-title {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: bold;
       margin-top: 25px;
       margin-bottom: 10px;
-      border-bottom: 2px solid rgba(0,0,0,0.4);
-      display: inline-block;
-      padding-bottom: 3px;
+      color: #004d80;
+      border-left: 6px solid #7ecbff;
+      padding-left: 10px;
     }
 
+    /* チェックリスト */
     ul {
       list-style: none;
       padding-left: 0;
-      font-size: 20px;
+      font-size: 19px;
     }
 
     li {
-      margin: 6px 0;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #00334d;
     }
 
+    /* チェックボックス */
+    input[type="checkbox"] {
+      width: 26px;
+      height: 26px;
+      accent-color: #7ecbff; /* 水色に統一 */
+      cursor: pointer;
+    }
+
+    /* 戻るボタン */
     .back-btn {
       display: block;
       width: 220px;
       padding: 12px 0;
-      background-color: #a3d9ff;
-      color: black;
+      background-color: #7ecbff;
+      color: #00334d;
       font-weight: bold;
       font-size: 20px;
       border-radius: 12px;
       text-align: center;
       text-decoration: none;
       margin: 40px auto 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="title">ITEMS</div>
+  <div class="title">ITEMS チェックリスト</div>
 
-  <div class="section-title">日用品</div>
-  <ul>
-    <li>雨具</li>
-    <li>カイロ</li>
-    <li>歯ブラシ</li>
-    <li>ハンカチ</li>
-    <li>ティッシュ</li>
-    <li>眼鏡・コンタクト</li>
-    <li>日焼け止め</li>
-    <li>ドライヤー・ヘアアイロン</li>
-    <li>シャンプー・コンディショナー（備え付け有）</li>
-    <li>洗顔料・メイク落とし・化粧品</li>
-    <li>剃刀・髭剃り</li>
-    <li>くし・整髪料</li>
-    <li>生理用品</li>
-    <li>常備薬</li>
-  </ul>
+  <div class="card">
 
-  <div class="section-title">電子機器</div>
-  <ul>
-    <li>スマホ</li>
-    <li>充電器</li>
-    <li>モバイルバッテリー</li>
-  </ul>
-
-  <div class="section-title">衣類</div>
-  <ul>
-    <li>スノーボードウェア・ズボン</li>
-    <li>着替え</li>
-    <li>下着・靴下</li>
-    <li>パジャマ</li>
-    <li>上着</li>
-    <li>バスタオル</li>
-  </ul>
-
-  <div class="section-title">貴重品</div>
-  <ul>
-    <li>財布</li>
-    <li>合宿費</li>
-    <li>レンタル料＋保証料（最大4000円）</li>
-    <li>2日目・3日目の昼食代</li>
-    <li>マイナンバーカード</li>
-  </ul>
-
-  <a href="index.html" class="back-btn">戻る</a>
-
-</body>
-</html>
+    <div class="section-title">日用品</div>
+    <ul>
+      <li><input type="checkbox">雨具</li>
+      <li><input type="checkbox">カイロ</li>
+      <li><input type="checkbox">歯ブラシ</li>
+      <li><input type="checkbox">ハンカチ</li>
+      <li><input type="checkbox">ティッシュ</li>
+      <li><input type="checkbox">眼鏡・コンタクト</li>
+      <li><input type="checkbox">日焼け止め</li>
+      <li><input type="checkbox">ドライヤー・ヘアアイロン</li>
+      <li><input type="checkbox">シャンプー・コンディショナー（備え付け有）</li>
+      <li><input type="checkbox">洗顔料・メイク落とし・化粧品</li>
+      <li><input type="checkbox">剃刀・髭剃り</li>
+      <li><input type="checkbox">くし・整髪料</li>
+      <li><input type="checkbox">生理用品</li>
