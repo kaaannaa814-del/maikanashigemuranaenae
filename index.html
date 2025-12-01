@@ -24,17 +24,6 @@
       justify-content: space-between;
       text-align: center;
       font-family: "Arial", sans-serif;
-      position: relative;
-    }
-
-    /* 半透明オーバーレイ */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(255,255,255,0.25);
-      z-index: 0;
     }
 
     /* タイトル */
@@ -43,10 +32,9 @@
       color: black;
       font-size: 52px;
       font-weight: 700;
-      text-shadow: 0 0 8px white;
-      font-family: 'Playfair Display', serif; /* フォント変更 */
-      position: relative;
-      z-index: 1;
+      /* 文字影で見やすく */
+      text-shadow: 2px 2px 6px rgba(255,255,255,0.7);
+      font-family: 'Playfair Display', serif;
     }
 
     /* ボタンのエリア */
@@ -56,8 +44,6 @@
       flex-direction: column;
       gap: 15px;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
 
     /* ボタン本体 */
