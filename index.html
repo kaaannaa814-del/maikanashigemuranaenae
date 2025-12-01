@@ -11,75 +11,57 @@
       padding: 0;
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
-      background-position: center top;
+      background-position: center;
       background-repeat: no-repeat;
       min-height: 100vh;
       font-family: Arial, sans-serif;
+      position: relative;
     }
 
-    @media (max-width: 600px) {
-      body {
-        background-position: center;
-      }
-      .title {
-        font-size: 36px;
-        padding-top: 40px;
-      }
+    /* ✦ 背景の上に薄い黒の幕を敷く（ボタンが見やすくなる & 背景に埋もれない） */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.25); 
+      z-index: 1;
+    }
+
+    /* コンテンツを前に出す */
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: 60px;
     }
 
     .title {
       font-size: 48px;
       color: white;
-      text-align: center;
-      padding-top: 50px;
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      margin-bottom: 50px;
     }
 
-    /* ボタン配置用のボックス */
+    @media (max-width: 600px) {
+      .title {
+        font-size: 36px;
+      }
+    }
+
     .menu-box {
-      margin-top: 60px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       align-items: center;
     }
 
-    /* ボタンデザイン */
     .menu-button {
       width: 200px;
       padding: 15px 0;
       text-align: center;
       font-size: 20px;
       font-weight: bold;
-      color: white;
-      background: rgba(0,0,0,0.6);
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      backdrop-filter: blur(4px);
-      transition: 0.2s;
-    }
+      co
 
-    .menu-button:hover {
-      background: rgba(255,255,255,0.8);
-      color: black;
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="title">
-    Snowboard Camp<br>2025
-  </div>
-
-  <!-- ナビゲーションボタン -->
-  <div class="menu-box">
-    <a class="menu-button" href="point.html">POINT</a>
-    <a class="menu-button" href="schedule.html">SCHEDULE</a>
-    <a class="menu-button" href="items.html">ITEMS</a>
-  </div>
-
-</body>
-</html>
