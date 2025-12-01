@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Items Checklist</title>
+  <title>ITEMS</title>
+
+  <!-- Google Fonts: Baloo 2 -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -12,21 +15,23 @@
       font-family: "Arial", sans-serif;
       background: linear-gradient(180deg, #c9eaff, #e7f6ff);
       min-height: 100vh;
+      color: #00334d;
     }
 
-    /* タイトル */
+    /* タイトル：おしゃれフォント */
     .title {
-      font-size: 40px;
-      font-weight: bold;
+      font-family: 'Baloo 2', cursive;
+      font-size: 48px;
+      font-weight: 700;
       text-align: center;
       margin-bottom: 25px;
       color: #003b66;
-      text-shadow: 0 0 4px white;
+      text-shadow: 0 0 6px rgba(255,255,255,0.8);
     }
 
     /* カード背景 */
     .card {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.75);
       padding: 20px 25px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -45,7 +50,6 @@
       padding-left: 10px;
     }
 
-    /* チェックリスト */
     ul {
       list-style: none;
       padding-left: 0;
@@ -57,18 +61,15 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #00334d;
     }
 
-    /* チェックボックス */
     input[type="checkbox"] {
       width: 26px;
       height: 26px;
-      accent-color: #7ecbff; /* 水色に統一 */
+      accent-color: #7ecbff;
       cursor: pointer;
     }
 
-    /* 戻るボタン */
     .back-btn {
       display: block;
       width: 220px;
@@ -88,7 +89,7 @@
 
 <body>
 
-  <div class="title">ITEMS チェックリスト</div>
+  <div class="title">ITEMS</div>
 
   <div class="card">
 
@@ -107,3 +108,39 @@
       <li><input type="checkbox">剃刀・髭剃り</li>
       <li><input type="checkbox">くし・整髪料</li>
       <li><input type="checkbox">生理用品</li>
+      <li><input type="checkbox">常備薬</li>
+    </ul>
+
+    <div class="section-title">電子機器</div>
+    <ul>
+      <li><input type="checkbox">スマホ</li>
+      <li><input type="checkbox">充電器</li>
+      <li><input type="checkbox">モバイルバッテリー</li>
+    </ul>
+
+    <div class="section-title">衣類</div>
+    <ul>
+      <li><input type="checkbox">スノーボードウェア・ズボン</li>
+      <li><input type="checkbox">着替え</li>
+      <li><input type="checkbox">下着・靴下</li>
+      <li><input type="checkbox">パジャマ</li>
+      <li><input type="checkbox">上着</li>
+      <li><input type="checkbox">バスタオル</li>
+    </ul>
+
+    <div class="section-title">貴重品</div>
+    <ul>
+      <li><input type="checkbox">財布</li>
+      <li><input type="checkbox">合宿費</li>
+      <li><input type="checkbox">レンタル料＋保証料（最大4000円）</li>
+      <li><input type="checkbox">2日目・3日目の昼食代</li>
+      <li><input type="checkbox">マイナンバーカード</li>
+    </ul>
+
+  </div>
+
+  <a href="index.html" class="back-btn">戻る</a>
+
+</body>
+</html>
+
