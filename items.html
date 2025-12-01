@@ -3,163 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITEMS</title>
+  <title>Items</title>
 
-  <!-- Google Fonts: Spectral -->
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap" rel="stylesheet">
+  <!-- Google Fonts Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      background-color: #f0f0f0; /* 例: 背景色 */
       font-family: "Arial", sans-serif;
-      background: linear-gradient(180deg, #e3edf5, #f7fbff);
-      min-height: 100vh;
-      color: #1a2d3b;
+      text-align: center;
     }
 
+    /* タイトル */
     .title {
-      font-family: 'Spectral', serif;
-      font-size: 44px;
+      margin-top: 40px;
+      color: black;
+      font-size: 48px;
       font-weight: 700;
-      text-align: center;
-      margin-bottom: 25px;
-      color: #0f1f2b;
-      text-shadow: 0 0 4px rgba(255,255,255,0.8);
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 24px 28px;
-      border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      max-width: 680px;
-      margin: 0 auto;
-      backdrop-filter: blur(4px);
-    }
-
-    .section-title {
-      font-size: 22px;
-      font-weight: 600;
-      margin-top: 24px;
-      margin-bottom: 8px;
-      color: #0b1c2a;
-      border-left: 5px solid #5d9ed8;
-      padding-left: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 18px;
-    }
-
-    li {
-      margin: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #0f2738;
-    }
-
-    input[type="checkbox"] {
-      width: 24px;
-      height: 24px;
-      accent-color: #5d9ed8;
-      cursor: pointer;
-    }
-
-    .back-btn {
-      display: block;
-      width: 200px;
-      padding: 10px 0;
-      background-color: #5d9ed8;
-      color: #0f1f2b;
-      font-weight: bold;
-      font-size: 18px;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      margin: 35px auto 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      text-shadow: 2px 2px 6px rgba(255,255,255,0.7);
+      font-family: 'Playfair Display', serif; /* タイトルをPlayfair Displayに */
     }
   </style>
 </head>
-
 <body>
 
   <div class="title">ITEMS</div>
 
-  <div class="card">
-
-    <div class="section-title">日用品</div>
-    <ul>
-      <li><input type="checkbox" id="item0">雨具</li>
-      <li><input type="checkbox" id="item1">カイロ</li>
-      <li><input type="checkbox" id="item2">歯ブラシ</li>
-      <li><input type="checkbox" id="item3">ハンカチ</li>
-      <li><input type="checkbox" id="item4">ティッシュ</li>
-      <li><input type="checkbox" id="item5">眼鏡・コンタクト</li>
-      <li><input type="checkbox" id="item6">日焼け止め</li>
-      <li><input type="checkbox" id="item7">ドライヤー・ヘアアイロン</li>
-      <li><input type="checkbox" id="item8">シャンプー・コンディショナー（備え付け有）</li>
-      <li><input type="checkbox" id="item9">洗顔料・メイク落とし・化粧品</li>
-      <li><input type="checkbox" id="item10">剃刀・髭剃り</li>
-      <li><input type="checkbox" id="item11">くし・整髪料</li>
-      <li><input type="checkbox" id="item12">生理用品</li>
-      <li><input type="checkbox" id="item13">常備薬</li>
-    </ul>
-
-    <div class="section-title">電子機器</div>
-    <ul>
-      <li><input type="checkbox" id="item14">スマホ</li>
-      <li><input type="checkbox" id="item15">充電器</li>
-      <li><input type="checkbox" id="item16">モバイルバッテリー</li>
-    </ul>
-
-    <div class="section-title">衣類</div>
-    <ul>
-      <li><input type="checkbox" id="item17">スノーボードウェア・ズボン</li>
-      <li><input type="checkbox" id="item18">着替え</li>
-      <li><input type="checkbox" id="item19">下着・靴下</li>
-      <li><input type="checkbox" id="item20">パジャマ</li>
-      <li><input type="checkbox" id="item21">上着</li>
-      <li><input type="checkbox" id="item22">バスタオル</li>
-    </ul>
-
-    <div class="section-title">貴重品</div>
-    <ul>
-      <li><input type="checkbox" id="item23">財布</li>
-      <li><input type="checkbox" id="item24">合宿費</li>
-      <li><input type="checkbox" id="item25">レンタル料＋保証料（最大4000円）</li>
-      <li><input type="checkbox" id="item26">2日目・3日目の昼食代</li>
-      <li><input type="checkbox" id="item27">マイナンバーカード</li>
-    </ul>
-
-  </div>
-
-  <a href="index.html" class="back-btn">戻る</a>
-
-  <script>
-    // チェック状態を localStorage に保存・復元
-    const totalItems = 28; // チェックボックスの数
-
-    window.addEventListener('DOMContentLoaded', () => {
-      for(let i=0; i<totalItems; i++){
-        const checkbox = document.getElementById('item'+i);
-        // 保存済みの状態を復元
-        const saved = localStorage.getItem('item'+i);
-        if(saved === 'true'){
-          checkbox.checked = true;
-        }
-
-        // チェックが変わったら保存
-        checkbox.addEventListener('change', () => {
-          localStorage.setItem('item'+i, checkbox.checked);
-        });
-      }
-    });
-  </script>
+  <!-- ここにアイテムリストなど -->
 
 </body>
 </html>
+
