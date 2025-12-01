@@ -46,13 +46,13 @@ h1 {
 
 .timeline {
   position: relative;
-  padding-left: 44px;
+  padding-left: 28px; /* 縦線位置 */
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 28px; /* 縦線 */
+  left: 0; /* 線を左端に */
   top: 0;
   bottom: 0;
   width: 4px;
@@ -62,12 +62,12 @@ h1 {
 
 .timeline-item {
   padding: 12px 0;
+  margin-left: 12px; /* テキストを線から少し右に */
 }
 
 .time-text {
   font-size: 18px;
   font-weight: 600;
-  margin-left: 0; /* 丸がないので左マージンなし */
 }
 
 .time-strong {
@@ -80,6 +80,8 @@ h1 {
   h1{font-size:34px;}
   .day-title{font-size:22px;}
   .time-text{font-size:16px;}
+  .timeline{padding-left:20px;}
+  .timeline-item{margin-left:8px;}
 }
 </style>
 </head>
@@ -87,6 +89,7 @@ h1 {
 
 <h1>Schedule</h1>
 
+<!-- 1月15日 -->
 <div class="day-block">
   <div class="day-title">1月15日（木）</div>
   <div class="timeline">
@@ -99,6 +102,7 @@ h1 {
   </div>
 </div>
 
+<!-- 1月16日 -->
 <div class="day-block">
   <div class="day-title">1月16日（金）</div>
   <div class="timeline">
@@ -110,6 +114,40 @@ h1 {
     </div>
     <div class="timeline-item">
       <div class="time-text"><span class="time-strong">16:00</span>ホテル</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">18:00</span>夕食</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">20:00</span>宴会</div>
+    </div>
+  </div>
+</div>
+
+<!-- 1月17日 -->
+<div class="day-block">
+  <div class="day-title">1月17日（土）</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">07:30</span>朝食</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">09:00</span>ホテル出発</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">09:30</span>スキー場着</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">10:00</span>フリータイム</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">16:30</span>集合</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">17:30</span>出発</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time-text"><span class="time-strong">21:30</span>バスタ新宿着</div>
     </div>
   </div>
 </div>
