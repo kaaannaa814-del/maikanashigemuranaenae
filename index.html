@@ -2,9 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snowboard Camp 2025</title>
-
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
@@ -12,56 +11,60 @@
       background-image: url('https://raw.githubusercontent.com/kaaannaa814-del/gikkurukototkotomaimai/main/images/snowboard115.jpg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      position: relative;
-    }
-
-    /* ✦ 背景の上に薄い黒の幕を敷く（ボタンが見やすくなる & 背景に埋もれない） */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.25); 
-      z-index: 1;
-    }
-
-    /* コンテンツを前に出す */
-    .content {
-      position: relative;
-      z-index: 2;
+      font-family: 'Arial', sans-serif;
+      color: white;
       text-align: center;
-      padding-top: 60px;
     }
 
     .title {
-      font-size: 48px;
-      color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
-      margin-bottom: 50px;
-    }
-
-    @media (max-width: 600px) {
-      .title {
-        font-size: 36px;
-      }
+      font-size: 60px;
+      font-weight: 700;
+      margin-top: 120px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.7);
+      letter-spacing: 2px;
+      line-height: 1.2;
     }
 
     .menu-box {
+      margin-top: 140px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       align-items: center;
     }
 
-    .menu-button {
-      width: 200px;
+    .menu-btn {
+      display: block;
+      width: 260px;
       padding: 15px 0;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      co
+      font-size: 22px;
+      color: white;
+      text-decoration: none;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 15px;
+      backdrop-filter: blur(3px);
+      transition: 0.25s;
+    }
 
+    .menu-btn:hover {
+      background: rgba(0,0,0,0.7);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="title">
+    Snowboard Camp<br>2025
+  </div>
+
+  <div class="menu-box">
+    <a href="point.html" class="menu-btn">POINT</a>
+    <a href="schedule.html" class="menu-btn">SCHEDULE</a>
+    <a href="items.html" class="menu-btn">ITEMS</a>
+  </div>
+
+</body>
+</html>
