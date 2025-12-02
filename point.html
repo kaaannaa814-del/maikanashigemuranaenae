@@ -3,105 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Point</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <title>POINT</title>
 
   <style>
-    :root{
-      --accent: #5a7cae;
-      --text: #222;
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: "Playfair Display", serif;
+      background-color: #e8f6ff; /* ←薄い水色 */
     }
 
-    body{
-      font-family: "Noto Sans JP", sans-serif;
-      background: #ffffff;
-      color: var(--text);
-      margin: 0;
-      padding: 40px 22px;
-      line-height: 1.9;
+    .wrapper{
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
     }
 
     h1{
-      font-family: "Playfair Display", serif;
       text-align: center;
-      font-size: 48px;
+      font-size: 2.4rem;
       font-weight: 700;
-      color: #000;
-      margin-bottom: 50px;
-      letter-spacing: 1px;
+      color: #000; /* ←タイトル黒字 */
+      margin-bottom: 30px;
     }
 
-    .content{
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 18px;
-    }
-
-    ul{
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li{
-      margin-bottom: 20px;
-      position: relative;
-      padding-left: 16px;
-    }
-
-    li::before{
-      content: "•";
-      color: var(--accent);
-      font-weight: 700;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    .red{
-      color: #d40000;
-      font-weight: 700;
+    .point-box{
+      background: white;
+      padding: 22px 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
   </style>
 </head>
-
 <body>
 
-  <h1>point</h1>
+  <div class="wrapper">
 
-  <div class="content">
-    <ul>
-      <li>日程：1月15日（木）〜1月17日（土）</li>
+    <h1>POINT</h1>
 
-      <li>
-        集合時間：<span class="red">22:15</span><br>
-        <a href="https://www.google.com/maps/place/バスタ新宿/@35.689592,139.700413" 
-           target="_blank" 
-           style="color: var(--accent); text-decoration: underline;">
-          バスタ新宿4階（Googleマップで開く）
-        </a>
-      </li>
+    <div class="point-box">
+      ・日程　１月１５日（木）ー１月１７日（土）<br>
+      ・集合　22：15　バスタ新宿<br>
+      ・解散予定　21：30<br>
+      ・場所：竜王スキー場<br>
+      ・ホテル：竜王マウンテンリゾート<br>
+    </div>
 
-      <li>解散予定：21:30</li>
-
-      <li>
-        場所：竜王スキーパーク<br>
-        <a href="https://www.google.com/maps/place/竜王スキーパーク/@36.786236,138.501164" 
-           target="_blank" 
-           style="color: var(--accent); text-decoration: underline;">
-          Googleマップを開く
-        </a>
-      </li>
-
-      <li>防寒小物レンタルする人は 300円/日 かかります</li>
-
-      <li>レンタル保証代は合宿費に含まれていないので、別で用意してください（500円/日）</li>
-
-      <li>16日の朝食は支給されないため、各自持参してください</li>
-
-      <li>ゲレンデで昼食を食べるため、2日間分の昼食代も用意してください</li>
-    </ul>
   </div>
 
 </body>
