@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Schedule</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- 見やすいフォント -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --accent: #4a90e2;
@@ -17,13 +20,15 @@
 body {
   margin: 0;
   padding: 20px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Noto Sans JP', sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.7;
 }
 
 h1 {
-  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 38px;
   text-align: center;
   margin-bottom: 40px;
   font-weight: 700;
@@ -39,20 +44,20 @@ h1 {
 }
 
 .day-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   margin: 6px 0 18px 0;
 }
 
 .timeline {
   position: relative;
-  padding-left: 28px; /* 縦線位置 */
+  padding-left: 28px;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 0; /* 線を左端に */
+  left: 0;
   top: 0;
   bottom: 0;
   width: 4px;
@@ -62,12 +67,12 @@ h1 {
 
 .timeline-item {
   padding: 12px 0;
-  margin-left: 12px; /* テキストを線から少し右に */
+  margin-left: 12px;
 }
 
 .time-text {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .time-strong {
@@ -77,9 +82,9 @@ h1 {
 }
 
 @media (max-width:600px){
-  h1{font-size:34px;}
+  h1{font-size:32px;}
   .day-title{font-size:22px;}
-  .time-text{font-size:16px;}
+  .time-text{font-size:15px;}
   .timeline{padding-left:20px;}
   .timeline-item{margin-left:8px;}
 }
@@ -89,7 +94,6 @@ h1 {
 
 <h1>Schedule</h1>
 
-<!-- 1月15日 -->
 <div class="day-block">
   <div class="day-title">1月15日（木）</div>
   <div class="timeline">
@@ -102,53 +106,27 @@ h1 {
   </div>
 </div>
 
-<!-- 1月16日 -->
 <div class="day-block">
   <div class="day-title">1月16日（金）</div>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">05:10</span>スキー場到着予定</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">07:00</span>フリータイム</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">16:00</span>ホテル</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">18:00</span>夕食</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">20:00</span>宴会</div>
-    </div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">05:10</span>スキー場到着予定</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">07:00</span>フリータイム</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">16:00</span>ホテル</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">18:00</span>夕食</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">20:00</span>宴会</div></div>
   </div>
 </div>
 
-<!-- 1月17日 -->
 <div class="day-block">
   <div class="day-title">1月17日（土）</div>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">07:30</span>朝食</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">09:00</span>ホテル出発</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">09:30</span>スキー場着</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">10:00</span>フリータイム</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">16:30</span>集合</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">17:30</span>出発</div>
-    </div>
-    <div class="timeline-item">
-      <div class="time-text"><span class="time-strong">21:30</span>バスタ新宿着</div>
-    </div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">07:30</span>朝食</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">09:00</span>ホテル出発</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">09:30</span>スキー場着</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">10:00</span>フリータイム</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">16:30</span>集合</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">17:30</span>出発</div></div>
+    <div class="timeline-item"><div class="time-text"><span class="time-strong">21:30</span>バスタ新宿着</div></div>
   </div>
 </div>
 
