@@ -18,17 +18,15 @@
       --radius: 14px;
     }
 
-    *{box-sizing: border-box}
+    *{box-sizing:border-box}
 
     body{
       margin:0;
       padding:22px;
       min-height:100vh;
-      font-family: "Spectral", serif;
-      background: linear-gradient(180deg,var(--bg1),#f7fbff);
+      font-family:"Spectral", serif;
+      background:linear-gradient(180deg,var(--bg1),#f7fbff);
       color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
 
     .container{
@@ -36,9 +34,9 @@
       margin:0 auto;
     }
 
-    /* ===== タイトル（Scheduleと統一） ===== */
+    /* タイトル（Scheduleと統一） */
     .title{
-      font-family: "Playfair Display", serif;
+      font-family:"Playfair Display", serif;
       font-size:40px;
       font-weight:700;
       text-align:center;
@@ -56,20 +54,18 @@
     }
 
     .btn{
-      display:inline-block;
       padding:10px 14px;
       border-radius:10px;
       background:var(--accent);
       color:#06202a;
       font-weight:600;
-      text-decoration:none;
-      cursor:pointer;
-      box-shadow:0 3px 8px rgba(0,0,0,0.12);
       border:none;
+      cursor:pointer;
+      box-shadow:0 3px 8px rgba(0,0,0,.12);
     }
 
     .btn.secondary{
-      background:#ffffff;
+      background:#fff;
       color:var(--accent);
       border:2px solid var(--accent);
     }
@@ -78,7 +74,7 @@
       background:var(--card-bg);
       padding:22px;
       border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(15,30,40,0.08);
+      box-shadow:0 6px 18px rgba(15,30,40,.08);
     }
 
     .section{
@@ -91,8 +87,8 @@
       gap:12px;
       margin-bottom:10px;
       font-weight:700;
-      color:#073147;
       font-size:20px;
+      color:#073147;
     }
 
     .section-title::before{
@@ -112,7 +108,6 @@
       gap:6px;
     }
 
-    /* ===== 行間を詰めた ===== */
     li.item{
       display:flex;
       align-items:center;
@@ -138,19 +133,17 @@
       word-break:break-word;
     }
 
-    .muted{
-      display:block;
-      font-size:13px;
-      color:var(--muted);
-      margin-top:4px;
-    }
-
     .footer{
       text-align:center;
       margin-top:18px;
     }
 
-    @media (max-width:480px){
+    .muted{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    @media(max-width:480px){
       .title{font-size:32px}
     }
   </style>
@@ -166,6 +159,7 @@
     </div>
 
     <div class="card">
+
       <div class="section">
         <div class="section-title">日用品</div>
         <ul class="items" id="section-1"></ul>
@@ -185,6 +179,7 @@
         <div class="section-title">貴重品</div>
         <ul class="items" id="section-4"></ul>
       </div>
+
     </div>
 
     <div class="footer">
@@ -194,61 +189,86 @@
 
   <script>
     const itemsData = {
-      section1: ["雨具","カイロ","歯ブラシ","ハンカチ","ティッシュ","眼鏡・コンタクト","日焼け止め","ドライヤー・ヘアアイロン","シャンプー・コンディショナー（備え付け有）","洗顔料・メイク落とし・化粧品","剃刀・髭剃り","くし・整髪料","生理用品","常備薬"],
-      section2: ["スマホ","充電器","モバイルバッテリー"],
-      section3: ["帽子・ゴーグル・手袋（持ってる人）","着替え","下着・靴下","パジャマ","上着","バスタオル"],
-      section4: ["財布","レンタル補償金：1000円","小物レンタル料（帽子・手袋・ゴーグル）：各300円/日 ※レンタルする人のみ","2日分の昼食代","マイナンバーカード"]
+      section1: [
+        "雨具","カイロ","歯ブラシ","ハンカチ","ティッシュ",
+        "眼鏡・コンタクト","日焼け止め",
+        "ドライヤー・ヘアアイロン",
+        "シャンプー・コンディショナー（備え付け有）",
+        "洗顔料・メイク落とし・化粧品",
+        "剃刀・髭剃り","くし・整髪料","生理用品","常備薬"
+      ],
+      section2: [
+        "スマホ","充電器","モバイルバッテリー"
+      ],
+      section3: [
+        "帽子・ゴーグル・手袋（持ってる人）",
+        "インナーウェア（ヒートテック、パーカー等）",
+        "スキー・スノボ用靴下",
+        "着替え",
+        "下着・靴下",
+        "パジャマ",
+        "上着",
+        "バスタオル"
+      ],
+      section4: [
+        "財布",
+        "レンタル補償金：1000円",
+        "小物レンタル料（帽子・手袋・ゴーグル）：各300円/日 ※レンタルする人のみ",
+        "2日分の昼食代",
+        "マイナンバーカード"
+      ]
     };
 
-    const sectionMap = {
-      "section-1": "section1",
-      "section-2": "section2",
-      "section-3": "section3",
-      "section-4": "section4"
+    const map = {
+      "section-1":"section1",
+      "section-2":"section2",
+      "section-3":"section3",
+      "section-4":"section4"
     };
 
-    let index = 0;
+    let i = 0;
 
-    document.addEventListener('DOMContentLoaded', () => {
-      Object.entries(sectionMap).forEach(([id,key]) => {
+    document.addEventListener("DOMContentLoaded", () => {
+      Object.entries(map).forEach(([id,key]) => {
         const ul = document.getElementById(id);
         itemsData[key].forEach(text => {
-          const li = document.createElement('li');
-          li.className = 'item';
+          const li = document.createElement("li");
+          li.className = "item";
 
-          const cb = document.createElement('input');
-          cb.type = 'checkbox';
-          cb.id = `item-${index}`;
+          const cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.id = "item-" + i;
 
-          const label = document.createElement('label');
+          const label = document.createElement("label");
           label.htmlFor = cb.id;
-          label.className = 'label-text';
+          label.className = "label-text";
           label.textContent = text;
 
-          const saved = localStorage.getItem(cb.id);
-          if(saved === "true") cb.checked = true;
+          if(localStorage.getItem(cb.id)==="true") cb.checked = true;
 
-          cb.addEventListener('change', () => {
-            localStorage.setItem(cb.id, cb.checked);
+          cb.addEventListener("change",()=>{
+            localStorage.setItem(cb.id,cb.checked);
           });
 
           li.append(cb,label);
           ul.append(li);
-          index++;
+          i++;
         });
       });
 
-      document.getElementById('checkAllBtn').onclick = () =>
-        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      document.getElementById("checkAllBtn").onclick = () => {
+        document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
           cb.checked = true;
           localStorage.setItem(cb.id,true);
         });
+      };
 
-      document.getElementById('clearAllBtn').onclick = () =>
-        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      document.getElementById("clearAllBtn").onclick = () => {
+        document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
           cb.checked = false;
           localStorage.setItem(cb.id,false);
         });
+      };
     });
   </script>
 </body>
