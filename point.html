@@ -12,42 +12,43 @@
     :root{
       --accent: #5a7cae;
       --text: #222;
+      --red: #d40000;
     }
 
     body{
       font-family: "Noto Sans JP", sans-serif;
-      background: #e8f6ff; /* ←薄い水色に変更 */
+      background: #e8f6ff;
       color: var(--text);
       margin: 0;
-      padding: 40px 22px;
-      line-height: 1.9;
+      padding: 28px 18px;
+      line-height: 1.6;
     }
 
     h1{
       font-family: "Playfair Display", serif;
       text-align: center;
-      font-size: 48px;
+      font-size: 40px;
       font-weight: 700;
-      color: #000;
-      margin-bottom: 50px;
+      margin-bottom: 28px;
       letter-spacing: 1px;
     }
 
     .content{
-      max-width: 820px;
+      max-width: 780px;
       margin: 0 auto;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     ul{
       list-style: none;
       padding-left: 0;
+      margin: 0;
     }
 
     li{
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       position: relative;
-      padding-left: 16px;
+      padding-left: 14px;
     }
 
     li::before{
@@ -60,15 +61,21 @@
     }
 
     .red{
-      color: #d40000;
+      color: var(--red);
       font-weight: 700;
+    }
+
+    a{
+      color: var(--accent);
+      text-decoration: underline;
+      font-size: 15px;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>point</h1>
+  <h1>Point</h1>
 
   <div class="content">
     <ul>
@@ -76,28 +83,33 @@
 
       <li>
         集合時間：<span class="red">22:15</span><br>
-       <a href="https://maps.app.goo.gl/d4371FmNSwLZWgDe9?g_st=ipc" target="_blank" style="color: var(--accent); text-decoration: underline;">
-  バスタ新宿4階（Googleマップで開く）
-</a>
+        <a href="https://maps.app.goo.gl/d4371FmNSwLZWgDe9?g_st=ipc" target="_blank">
+          バスタ新宿4階（Googleマップ）
+        </a>
       </li>
 
       <li>解散予定：21:30</li>
 
-  <li>
-  場所：竜王スキーパーク<br>
-<a href="https://maps.app.goo.gl/quoxHrXs2dg8Ra2c8?g_st=ipc" target="_blank" style="color: var(--accent); text-decoration: underline;">
-  竜王スキーパーク（地図を開く）
-</a>
+      <li>
+        場所：竜王スキーパーク<br>
+        <a href="https://maps.app.goo.gl/quoxHrXs2dg8Ra2c8?g_st=ipc" target="_blank">
+          地図を開く
+        </a>
+      </li>
 
-</li>
+      <li>
+        全員：ボード・ウェアレンタル無料  
+        （<span class="red">補償料1,000円必須</span>）
+      </li>
 
-        <li>全員:ボード、ウェアのレンタル無料　　　レンタル補償料1000円用意　必須 <li>
+      <li>
+        小物レンタル：<span class="red">各300円／日</span>  
+        （手袋・ゴーグル・帽子／全部で1,800円）
+      </li>
 
-      <li>小物（手袋・ゴーグル・帽子）をレンタルする人：各300円/日　全部借りる人は1800円用意 <li>
+      <li>16日の朝食は支給なし（各自持参）</li>
 
-       <li>16日の朝食は支給されないため、各自持参してください</li>
-
-      <li>ゲレンデで昼食を食べるため、2日間分の昼食代も用意してください</li>
+      <li>昼食代：2日分各自用意</li>
     </ul>
   </div>
 
