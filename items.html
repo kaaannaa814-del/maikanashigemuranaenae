@@ -34,7 +34,6 @@
       margin:0 auto;
     }
 
-    /* タイトル（Scheduleと統一） */
     .title{
       font-family:"Playfair Display", serif;
       font-size:40px;
@@ -129,8 +128,13 @@
 
     .label-text{
       font-size:16px;
-      line-height:1.05;
+      line-height:1.1;
       word-break:break-word;
+    }
+
+    input[type="checkbox"]:checked + .label-text{
+      text-decoration: line-through;
+      color:#8a9aa3;
     }
 
     .footer{
@@ -145,6 +149,15 @@
 
     @media(max-width:480px){
       .title{font-size:32px}
+    }
+
+    @media print{
+      .controls,.footer{
+        display:none;
+      }
+      body{
+        background:#fff;
+      }
     }
   </style>
 </head>
@@ -192,11 +205,14 @@
       section1: [
         "雨具","カイロ","歯ブラシ","ハンカチ","ティッシュ",
         "眼鏡・コンタクト","日焼け止め",
-        "ドライヤー(備え付け有）",
+        "ドライヤー（備え付け有）",
         "ヘアアイロン",
         "シャンプー・コンディショナー（備え付け有）",
         "洗顔料・メイク落とし・化粧品",
-        "剃刀・髭剃り","くし・整髪料","生理用品","常備薬"
+        "剃刀・髭剃り","くし・整髪料","生理用品","常備薬",
+        "ビニール袋",
+        "リフト券入れ（ウェアについてるかも）",
+        "ハンガー"
       ],
       section2: [
         "スマホ","充電器","モバイルバッテリー"
@@ -209,7 +225,9 @@
         "下着・靴下",
         "パジャマ",
         "上着",
-        "バスタオル"
+        "バスタオル",
+        "ヒッププロテクター（ある人）",
+        "ネックウォーマー"
       ],
       section4: [
         "財布",
